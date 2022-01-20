@@ -139,7 +139,7 @@ $ python tasks.py runserver # Starts the tasks management server"""
             print(f"{index}. {item}")
 
     def render_pending_tasks(self):
-        # Complete this method to return all incomplete tasks as HTML
+        # Method to return all incomplete tasks as HTML
         self.read_current()
         tasks = ""
         for p,t in self.current_items.items():
@@ -151,7 +151,7 @@ $ python tasks.py runserver # Starts the tasks management server"""
         return result
 
     def render_completed_tasks(self):
-        # Complete this method to return all completed tasks as HTML
+        # Method to return all completed tasks as HTML
         self.read_completed()
         completed = ""
         for t in self.completed_items:
@@ -163,7 +163,7 @@ $ python tasks.py runserver # Starts the tasks management server"""
         return result
     
     def render_add_task(self):
-        # Complete this method to return the HTML for the add task form
+        # Method to return the HTML for the add task form
         result = f"""<h1>Add Task</h1>
                     <form action="/add_task" method="post">
                         <input type="text" name="priority" placeholder="Priority">
@@ -173,7 +173,7 @@ $ python tasks.py runserver # Starts the tasks management server"""
         return result
     
     def render_done_task(self):
-        # Complete this method to return the HTML for the done task form
+        # Method to return the HTML for the done task form
         result = f"""<h1>Done Task</h1>
                     <form action="/done_task" method="post">
                         <input type="text" name="priority" placeholder="Priority">
@@ -182,7 +182,7 @@ $ python tasks.py runserver # Starts the tasks management server"""
         return result
     
     def render_delete_task(self):
-        # Complete this method to return the HTML for the delete task form
+        # Method to return the HTML for the delete task form
         result = f"""<h1>Delete Task</h1>
                     <form action="/delete_task" method="post">
                         <input type="text" name="priority" placeholder="Priority">
@@ -191,7 +191,7 @@ $ python tasks.py runserver # Starts the tasks management server"""
         return result
     
     def render_index(self):
-        # Complete this method to return the HTML for the index page
+        # Method to return the HTML for the index page
         self.read_current()
         self.read_completed()
         tasks = ""
@@ -237,7 +237,7 @@ class TasksServer(TasksCommand, BaseHTTPRequestHandler):
         elif self.path == "/completed":
             content = task_command_object.render_completed_tasks()
         elif self.path == "/add":
-            # Complete this method to return the HTML for the add task form
+            # Method to return the HTML for the add task form
             content = task_command_object.render_add_task()
         elif self.path == "/done":
             content = task_command_object.render_done_task()
