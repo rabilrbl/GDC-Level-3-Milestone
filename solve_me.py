@@ -289,5 +289,5 @@ class TasksServer(TasksCommand, BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-httpd = HTTPServer(("", 8000), TasksServer)
-httpd.serve_forever()
+# httpd = HTTPServer(("", 8000), TasksServer)
+# httpd.serve_forever()
